@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
-cd /home/ubuntu/apps/appwebservice
+APP_DIR="${APP_DIR:-/home/ubuntu/apps/appwebservice}"
+cd "$APP_DIR"
 git pull origin main
-npm install --production
+npm install --omit=dev
 pm2 restart cukurship-backend
 echo "[DEPLOY] Sukses: $(date)"
