@@ -35,4 +35,4 @@ app.post('/webhook', (req, res) => {
 
 app.get('/health', (_req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
 
-app.listen(PORT, () => console.log(`[WEBHOOK] Server berjalan di port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`[WEBHOOK] Server berjalan di port ${PORT}`));
